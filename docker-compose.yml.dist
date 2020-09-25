@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  testdb:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test'
+      MYSQL_USER: 'test'
+      MYSQL_PASSWORD: 'test'
+      MYSQL_DATABASE: 'test'
+    volumes:
+      - testdb:/var/lib/mysql-test
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+      - "--lower_case_table_names=1"
+volumes:
+  testdb:
+    driver: local

@@ -17,3 +17,4 @@
 ###< symfony/phpunit-bridge ###
 
 /.idea/
+/docker-compose.yml
