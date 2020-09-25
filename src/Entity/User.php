@@ -2,36 +2,51 @@
 
 declare(strict_types=1);
 
-
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-final class User implements UserInterface
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="cdm_users")
+ */
+class User implements UserInterface
 {
     /**
      * @var int
+     *
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(type="text", nullable=false)
      */
     private $username;
 
     /**
      * @var string
+     *
+     * @ORM\Column(type="text", nullable=false)
      */
     private $email;
 
     /**
      * @var string
+     *
+     * @ORM\Column(type="text", nullable=false)
      */
     private $password;
 
     /**
-     * @var ArrayCollection
+     * @var string[]
+     *
+     * @ORM\Column(type="json", nullable=false})
      */
     private $roles;
 
@@ -52,12 +67,19 @@ final class User implements UserInterface
         return $this;
     }
 
-    public function setRoles(ArrayCollection $roles): User
+    /**
+     * @param string[] $roles
+     * @return User
+     */
+    public function setRoles(array $roles): User
     {
         $this->roles = $roles;
     }
 
-    public function getRoles(): ArrayCollection
+    /**
+     * @return string[]
+     */
+    public function getRoles(): array
     {
         return $this->roles;
     }
@@ -88,7 +110,7 @@ final class User implements UserInterface
 
     public function getSalt()
     {
-        return 1;
+        return null;
     }
 
     public function eraseCredentials()
