@@ -75,7 +75,7 @@ class CommonFormAuthenticator extends AbstractFormLoginAuthenticator
     {
         // Check the user's password or other credentials and return true or false
         // If there are no credentials to check, you can just return true
-        throw new \Exception('TODO: check the credentials inside '.__FILE__);
+        throw new \Exception('TODO: check the credentials inside ' . __FILE__);
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
@@ -85,7 +85,7 @@ class CommonFormAuthenticator extends AbstractFormLoginAuthenticator
         }
 
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
     }
 
     protected function getLoginUrl()

@@ -60,7 +60,7 @@ class User implements UserInterface
         return $this->email;
     }
 
-    public function setEmail(string $email): User
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
@@ -69,9 +69,8 @@ class User implements UserInterface
 
     /**
      * @param string[] $roles
-     * @return User
      */
-    public function setRoles(array $roles): User
+    public function setRoles(array $roles): self
     {
         $this->roles = $roles;
     }
@@ -89,7 +88,7 @@ class User implements UserInterface
         return $this->password;
     }
 
-    public function setPassword(string $password): User
+    public function setPassword(string $password): self
     {
         $this->password = $password;
 
@@ -101,7 +100,7 @@ class User implements UserInterface
         return $this->username;
     }
 
-    public function setUsername(string $username): User
+    public function setUsername(string $username): self
     {
         $this->username = $username;
 
