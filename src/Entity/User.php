@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="cdm_users")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface
 {
@@ -46,9 +48,15 @@ class User implements UserInterface
     /**
      * @var string[]
      *
-     * @ORM\Column(type="json", nullable=false})
+     * @ORM\Column(type="json", nullable=false)
      */
-    private $roles;
+    private $roles = [];
+
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
 
     public function getId()
     {
@@ -114,5 +122,17 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
     }
 }
