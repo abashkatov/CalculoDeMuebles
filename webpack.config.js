@@ -69,6 +69,11 @@ Encore
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/admin.js')
+
+    .copyFiles({
+        from: './node_modules/@coreui/icons/sprites',
+        to: 'images/svg/[path][name].[ext]'
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();
