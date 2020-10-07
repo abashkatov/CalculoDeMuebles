@@ -1,22 +1,62 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-auth.html.twig' %}
 
 {% block title %}Sign up{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+    <div class="col-md-6">
+        <div class="card mx-4">
+            <div class="card-body p-4">
+                <h1>Sign up</h1>
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <p class="text-muted">Create your account</p>
+                {{ form_start(registrationForm) }}
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <svg class="c-icon">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        {{ form_widget(registrationForm.username) }}
+                    </div>
 
-    <h1>Sign up</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Sign up</button>
-    {{ form_end(registrationForm) }}
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <svg class="c-icon">
+                                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+                                    </svg>
+                                </span>
+                        </div>
+                        {{ form_widget(registrationForm.email) }}
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <svg class="c-icon">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        {{ form_widget(registrationForm.plainPassword.first) }}
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <svg class="c-icon">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        {{ form_widget(registrationForm.plainPassword.second) }}
+                    </div>
+{#                    {{ form_row(registrationForm.agreeTerms) }}#}
+                    <button class="btn btn-block btn-success" type="submit">Sign up</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
