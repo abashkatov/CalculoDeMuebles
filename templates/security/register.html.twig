@@ -10,6 +10,9 @@
                 {% for flashError in app.flashes('verify_email_error') %}
                     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
                 {% endfor %}
+                {% for flashError in app.flashes %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
                 <p class="text-muted">Create your account</p>
                 {{ form_start(registrationForm) }}
                     <div class="input-group mb-3">
@@ -21,6 +24,7 @@
                             </span>
                         </div>
                         {{ form_widget(registrationForm.username) }}
+                        {{ form_errors(registrationForm.username) }}
                     </div>
 
                     <div class="input-group mb-3">
@@ -32,6 +36,7 @@
                                 </span>
                         </div>
                         {{ form_widget(registrationForm.email) }}
+                        {{ form_errors(registrationForm.email) }}
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -42,6 +47,7 @@
                             </span>
                         </div>
                         {{ form_widget(registrationForm.plainPassword.first) }}
+                        {{ form_errors(registrationForm.plainPassword.first) }}
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
@@ -52,6 +58,7 @@
                             </span>
                         </div>
                         {{ form_widget(registrationForm.plainPassword.second) }}
+                        {{ form_errors(registrationForm.plainPassword.second) }}
                     </div>
 {#                    {{ form_row(registrationForm.agreeTerms) }}#}
                     <button class="btn btn-block btn-success" type="submit">Sign up</button>
