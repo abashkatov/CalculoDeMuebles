@@ -143,4 +143,9 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getGravatar(int $size = 32): string
+    {
+        return 'https://www.gravatar.com/avatar/' . \md5(\mb_strtolower(\trim($this->getEmail()))) . 's=' . $size;
+    }
 }
