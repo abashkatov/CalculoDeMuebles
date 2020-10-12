@@ -1,21 +1,25 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    enable_authenticator_manager: true
     providers:
-        users_in_memory: { memory: null }
+        users_in_db:
+            entity: { class: App\Entity\User, property: username }
+    encoders:
+        App\Entity\User:
+            algorithm: auto
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
             lazy: true
-            provider: users_in_memory
+            provider: users_in_db
             guard:
                 authenticators:
                     - App\Security\CommonFormAuthenticator
             logout:
                 path: app_logout
-                target: app_profile
+                target: app_main
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
