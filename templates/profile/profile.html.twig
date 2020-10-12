@@ -1,6 +1,6 @@
-{% extends 'base-auth.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Main{% endblock %}
+{% block title %}Profile{% endblock %}
 
 {% block body %}
 <div class="col-md-8">
@@ -8,14 +8,9 @@
         <div class="card p-4">
             <div class="card-body text-center">
                 {% if app.user %}
-{#                    <div class="mb-3">#}
-                        <p>
-                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                        </p>
-                        <p>
-                            <a class="btn btn-lg btn-link mt-3" href="{{ path('app_profile') }}">Profile</a>
-                        </p>
-{#                    </div>#}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
                 {% else %}
                     <a class="btn btn-primary btn-lg btn-outline-light mt-3" href="{{ path('app_login') }}">Sign in</a> <br/>
                 {% endif %}
