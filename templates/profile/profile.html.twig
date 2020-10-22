@@ -4,5 +4,55 @@
 
 {% block body %}
 <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"> Profile
+                <div class="card-header-actions"></div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        {% for flashError in app.flashes('verify_email_error') %}
+                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                        {% endfor %}
+                        {% for flashError in app.flashes %}
+                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                        {% endfor %}
+                        {{ form_start(profileForm) }}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <svg class="c-icon">
+                                                <use href="{{ asset('build/images/svg/free.svg#cil-user') }}"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    {{ form_widget(profileForm.username) }}
+                                    {{ form_errors(profileForm.username) }}
+                                </div>
+                            </div><div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <svg class="c-icon">
+                                                <use xlink:href="{{ asset('build/images/svg/free.svg#cil-envelope-open') }}"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    {{ form_widget(profileForm.email) }}
+                                    {{ form_errors(profileForm.email) }}
+                                </div>
+                            </div><div class="form-group">
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                </div>
+                            </div>
+                        {{ form_end(profileForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

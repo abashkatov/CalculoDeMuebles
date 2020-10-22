@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Enum\RoleEnum;
 use App\Form\RegistrationFormType;
 use App\Security\EmailVerifier;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,9 +21,12 @@ class SecurityController extends AbstractController
 {
     private EmailVerifier $emailVerifier;
 
-    public function __construct(EmailVerifier $emailVerifier)
+    private EntityManagerInterface $em;
+
+    public function __construct(EmailVerifier $emailVerifier, EntityManagerInterface $em)
     {
         $this->emailVerifier = $emailVerifier;
+        $this->em = $em;
     }
 
     /**
@@ -68,9 +72,8 @@ class SecurityController extends AbstractController
                 )
             );
             $user->addRole(RoleEnum::ROLE_USER);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+            $this->em->persist($user);
+            $this->em->flush();
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation(
