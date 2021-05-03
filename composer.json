@@ -1,4 +1,6 @@
 {
+    "name": "abashkatov/dashboard",
+    "description": "",
     "type": "project",
     "license": "proprietary",
     "require": {
