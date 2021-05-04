@@ -22,41 +22,41 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private int $id;
 
     /**
      * @var string
      *
      * @ORM\Column(type="text", nullable=false)
      */
-    private $username;
+    private string $username;
 
     /**
      * @var string
      *
      * @ORM\Column(type="text", nullable=false)
      */
-    private $email;
+    private string $email;
 
     /**
      * @var string
      *
      * @ORM\Column(type="text", nullable=false)
      */
-    private $password;
+    private string $password;
 
     /**
      * @var string[]
      *
      * @ORM\Column(type="json", nullable=false)
      */
-    private $roles = [];
+    private array $roles = [];
 
     /**
      * @var bool
      * @ORM\Column(type="boolean")
      */
-    private $isVerified = false;
+    private bool $isVerified = false;
 
     public function getId()
     {
