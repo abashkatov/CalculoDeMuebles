@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Form\RegistrationFormType;
 use App\Form\User\ProfileFormType;
-use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

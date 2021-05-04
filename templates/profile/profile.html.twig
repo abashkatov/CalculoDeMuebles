@@ -15,8 +15,10 @@
                         {% for flashError in app.flashes('verify_email_error') %}
                             <div class="alert alert-danger" role="alert">{{ flashError }}</div>
                         {% endfor %}
-                        {% for flashError in app.flashes %}
-                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                        {% for flashErrors in app.flashes %}
+                            {% for flashError in flashErrors %}
+                                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                            {% endfor %}
                         {% endfor %}
                         {{ form_start(profileForm) }}
                             <div class="form-group">
