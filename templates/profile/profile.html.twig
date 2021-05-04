@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profile{% endblock %}
+{% block title %}{% trans %}Profile{% endtrans %}{% endblock %}
 
 {% block body %}
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header"> Profile
+            <div class="card-header"> {% trans %}Profile{% endtrans %}
                 <div class="card-header-actions"></div>
             </div>
             <div class="card-body">
@@ -47,7 +47,7 @@
                                 </div>
                             </div><div class="form-group">
                                 <div class="form-group">
-                                    <button class="btn btn-primary" type="submit">Save</button>
+                                    <button class="btn btn-primary" type="submit">{% trans %}Save{% endtrans %}</button>
                                 </div>
                             </div>
                         {{ form_end(profileForm) }}

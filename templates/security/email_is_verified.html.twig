@@ -1,13 +1,13 @@
 {% extends 'base-auth.html.twig' %}
 
-{% block title %}Email is verified!{% endblock %}
+{% block title %}{% trans %}Email is verified!{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="col-md-6">
         <div class="card mx-4">
             <div class="card-body p-4">
-                <h1>Email is verified!</h1>
-                <a href="{{ path('app_profile') }}">Profile</a>
+                <h1>{% trans %}Email is verified!{% endtrans %}</h1>
+                <a href="{{ path('app_profile') }}">{% trans %}Profile{% endtrans %}</a>
             </div>
         </div>
     </div>

@@ -1,19 +1,19 @@
 {% extends 'base-auth.html.twig' %}
 
-{% block title %}Sign up{% endblock %}
+{% block title %}{% trans %}Sign up{% endtrans %}{% endblock %}
 
 {% block body %}
     <div class="col-md-6">
         <div class="card mx-4">
             <div class="card-body p-4">
-                <h1>Sign up</h1>
+                <h1>{% trans %}Sign up{% endtrans %}</h1>
                 {% for flashError in app.flashes('verify_email_error') %}
                     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
                 {% endfor %}
                 {% for flashError in app.flashes %}
                     <div class="alert alert-danger" role="alert">{{ flashError }}</div>
                 {% endfor %}
-                <p class="text-muted">Create your account</p>
+                <p class="text-muted">{% trans %}Create your account{% endtrans %}</p>
                 {{ form_start(registrationForm) }}
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -61,10 +61,10 @@
                         {{ form_errors(registrationForm.plainPassword.second) }}
                     </div>
 {#                    {{ form_row(registrationForm.agreeTerms) }}#}
-                    <button class="btn btn-block btn-success" type="submit">Sign up</button>
+                    <button class="btn btn-block btn-success" type="submit">{% trans %}Sign up{% endtrans %}</button>
                 {{ form_end(registrationForm) }}
                 <div class="text-right">
-                    <a href="{{ path('app_main') }}">Main</a>
+                    <a href="{{ path('app_main') }}">{% trans %}Main{% endtrans %}</a>
                 </div>
             </div>
         </div>

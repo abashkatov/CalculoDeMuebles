@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="ru" target-language="ru" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="iaBAhzV" resname="Email is verified!">
+        <source>Email is verified!</source>
+        <target>Почта подтверждена</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Профиль</target>
+      </trans-unit>
+      <trans-unit id="XiuOllA" resname="Sign up">
+        <source>Sign up</source>
+        <target>Зарегистрироваться</target>
+      </trans-unit>
+      <trans-unit id="nnCTSPW" resname="Create your account">
+        <source>Create your account</source>
+        <target>Создать учетную запись</target>
+      </trans-unit>
+      <trans-unit id="64FL48o" resname="Main">
+        <source>Main</source>
+        <target>Главная</target>
+      </trans-unit>
+      <trans-unit id="NjnvzQi" resname="Hi">
+        <source>Hi</source>
+        <target>Привет</target>
+      </trans-unit>
+      <trans-unit id="VWEDVso" resname="Please confirm your email">
+        <source>Please confirm your email</source>
+        <target>Пожалуйста, подтвердите ваш адрес электронной почты</target>
+      </trans-unit>
+      <trans-unit id="nZPB._o" resname="Please confirm your email address by clicking the following link">
+        <source>Please confirm your email address by clicking the following link</source>
+        <target>Пожалуйста, подтвердите ваш адрес электронной почты перейдя по следующей ссылке</target>
+      </trans-unit>
+      <trans-unit id="ITaQX9q" resname="Confirm my Email">
+        <source>Confirm my Email</source>
+        <target>Подтвердите мою электронную почту</target>
+      </trans-unit>
+      <trans-unit id="yT_RhJ1" resname="This link will expire in %hours% hour(s)">
+        <source>This link will expire in %hours% hour(s)</source>
+        <target>Эта ссылка истечет через {hours} часов</target>
+      </trans-unit>
+      <trans-unit id="F7WctIl" resname="Cheers!">
+        <source>Cheers!</source>
+        <target>С наилучшими пожеланиями!</target>
+      </trans-unit>
+      <trans-unit id="zI.Z63_" resname="Welcome!">
+        <source>Welcome!</source>
+        <target>Здравствуйте!</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Выйти</target>
+      </trans-unit>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Войти</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Сохранить</target>
+      </trans-unit>
+      <trans-unit id="dKiDoDe" resname="Settings">
+        <source>Settings</source>
+        <target>Настройки</target>
+      </trans-unit>
+      <trans-unit id="qYsFYv3" resname="You are logged in as %name%">
+        <source>You are logged in as %name%</source>
+        <target>Вы авторизовались как {name}</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
