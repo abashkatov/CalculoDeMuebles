@@ -8,6 +8,7 @@ class SecurityControllerTest extends WebTestCase
 {
     public function testSomething()
     {
+        self::markTestSkipped();
         $client = static::createClient();
         $crawler = $client->request('GET', '/');
 
