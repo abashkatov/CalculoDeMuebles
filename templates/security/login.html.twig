@@ -7,7 +7,7 @@
         <div class="card-group">
             <div class="card p-4">
                 <div class="card-body">
-                    <h1>Login</h1>
+                    <h1>{% trans %}Login{% endtrans %}</h1>
                     <p class="text-muted">{% trans %}Sign In to your account{% endtrans %}</p>
                     <form method="post">
                         {% if error %}
@@ -16,7 +16,7 @@
 
                         {% if app.user %}
                             <div class="mb-3">
-                                {% trans %}You are logged in as {{ app.user.username }}{% endtrans %}, <a href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
+                                {% trans with {'%name%': app.user.username} %}You are logged in as %name%{% endtrans %}, <a href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
                             </div>
                         {% endif %}
 
@@ -61,7 +61,7 @@
                 <div class="card-body text-center">
                     <div>
                         <h2>{% trans %}Sign up{% endtrans %}</h2>
-                        <a href="{{ path('app_register') }}" class="btn btn-lg btn-outline-light mt-3" type="button">Register Now!</a>
+                        <a href="{{ path('app_register') }}" class="btn btn-lg btn-outline-light mt-3" type="button">{% trans %}Register Now{% endtrans %}!</a>
                     </div>
                 </div>
             </div>

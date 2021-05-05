@@ -73,6 +73,38 @@
         <source>You are logged in as %name%</source>
         <target>Вы авторизовались как {name}</target>
       </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Логин</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Почта</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Пароль</target>
+      </trans-unit>
+      <trans-unit id="Hkmh4Tp" resname="Repeat Password">
+        <source>Repeat Password</source>
+        <target>Повторите пароль</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Вход</target>
+      </trans-unit>
+      <trans-unit id="ZuCeQsp" resname="Sign In to your account">
+        <source>Sign In to your account</source>
+        <target>Вход в аккаунт</target>
+      </trans-unit>
+      <trans-unit id="u0L4zVJ" resname="Forgot password">
+        <source>Forgot password</source>
+        <target>Забыли пароль</target>
+      </trans-unit>
+      <trans-unit id="a7BVBve" resname="Register Now">
+        <source>Register Now</source>
+        <target>Зарегистрироваться</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
