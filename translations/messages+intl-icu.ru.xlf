@@ -105,6 +105,10 @@
         <source>Register Now</source>
         <target>Зарегистрироваться</target>
       </trans-unit>
+      <trans-unit id="3sv.CM7" resname="To confirm your email, you must first log in.">
+        <source>To confirm your email, you must first log in.</source>
+        <target>Для подтверждения почты необходимо предварительно авторизоваться.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

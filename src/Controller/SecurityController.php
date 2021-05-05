@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
 class SecurityController extends AbstractController
@@ -22,10 +23,13 @@ class SecurityController extends AbstractController
 
     private EntityManagerInterface $em;
 
-    public function __construct(EmailVerifier $emailVerifier, EntityManagerInterface $em)
+    private TranslatorInterface $translator;
+
+    public function __construct(EmailVerifier $emailVerifier, EntityManagerInterface $em, TranslatorInterface $translator)
     {
         $this->emailVerifier = $emailVerifier;
         $this->em = $em;
+        $this->translator = $translator;
     }
 
     /**
@@ -98,6 +102,10 @@ class SecurityController extends AbstractController
      */
     public function verifyUserEmail(Request $request): Response
     {
+        $this->addFlash(
+            'warning',
+            $this->translator->trans('To confirm your email, you must first log in.')
+        );
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         // validate email confirmation link, sets User::isVerified=true and persists
