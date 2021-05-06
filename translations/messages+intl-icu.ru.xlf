@@ -109,6 +109,50 @@
         <source>To confirm your email, you must first log in.</source>
         <target>Для подтверждения почты необходимо предварительно авторизоваться.</target>
       </trans-unit>
+      <trans-unit id="vQH5j0c" resname="To reset your password, please visit the following link">
+        <source>To reset your password, please visit the following link</source>
+        <target>Для сброса пароля перейдите по следующей ссылке</target>
+      </trans-unit>
+      <trans-unit id="wnwqmOO" resname="This link will expire in %expirationMessage%.">
+        <source>This link will expire in %expirationMessage%.</source>
+        <target>Ссылка действительна в течение {expirationMessage}.</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>Сброс пароля</target>
+      </trans-unit>
+      <trans-unit id="4O3_s6c" resname="Reset password">
+        <source>Reset password</source>
+        <target>Сбросить пароль</target>
+      </trans-unit>
+      <trans-unit id="y2XxXvP" resname="Send password reset email">
+        <source>Send password reset email</source>
+        <target>Отправить письмо для сброса пароля</target>
+      </trans-unit>
+      <trans-unit id="hOB8_o1" resname="Enter your email address and we we will send you a link to reset your password.">
+        <source>Enter your email address and we we will send you a link to reset your password.</source>
+        <target>Введите ваш адрес электронной почты и мы отправим вам ссылку на сброс пароля.</target>
+      </trans-unit>
+      <trans-unit id="U28cTzJ" resname="Password Reset Email Sent">
+        <source>Password Reset Email Sent</source>
+        <target>Письмо с инструкцией по сбросу пароля отправлено</target>
+      </trans-unit>
+      <trans-unit id="44ze_A4" resname="An email has been sent that contains a link that you can click to reset your password.">
+        <source>An email has been sent that contains a link that you can click to reset your password.</source>
+        <target>Письмо со ссылкой для сброса пароля отправлено.</target>
+      </trans-unit>
+      <trans-unit id="gBmHuW2" resname="If you dont receive an email please check your spam folder or &lt;a href=&quot;%href%&quot;&gt;try again&lt;/a&gt;.">
+        <source>If you dont receive an email please check your spam folder or &lt;a href="%href%"&gt;try again&lt;/a&gt;.</source>
+        <target><![CDATA[Если письмо со ссылкой не пришло, то проверьте папку со спамом или попробуйте <a href="%href%">ещё раз</a>.]]></target>
+      </trans-unit>
+      <trans-unit id="PdnfREH" resname="New password">
+        <source>New password</source>
+        <target>Новый пароль</target>
+      </trans-unit>
+      <trans-unit id="TdLhlyP" resname="The password fields must match.">
+        <source>The password fields must match.</source>
+        <target>Пароли должны совпадать.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

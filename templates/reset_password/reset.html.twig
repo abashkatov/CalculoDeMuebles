@@ -1,0 +1,23 @@
+{% extends 'base-auth.html.twig' %}
+
+{% block title %}{% trans %}Reset your password{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="col-md-8">
+    <div class="card-group">
+        <div class="card p-4">
+            <div class="card-body">
+                <h1>{% trans %}Reset your password{% endtrans %}</h1>
+            </div>
+        </div>
+        <div class="card p-4">
+            <div class="card-body">
+                {{ form_start(resetForm) }}
+                    {{ form_row(resetForm.plainPassword) }}
+                    <button class="btn btn-primary">{% trans %}Reset password{% endtrans %}</button>
+                {{ form_end(resetForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

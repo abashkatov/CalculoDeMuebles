@@ -1,0 +1,13 @@
+{% extends 'base-auth.html.twig' %}
+
+{% block title %}{% trans %}Password Reset Email Sent{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="col-md-8">
+    <p>
+        {% trans %}An email has been sent that contains a link that you can click to reset your password.{% endtrans %}
+        {% trans with {'%expirationMessage%': resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle')} %}This link will expire in %expirationMessage%.{% endtrans %}
+    </p>
+    <p>{% trans with {'%href%': path('app_forgot_password_request')} %}If you dont receive an email please check your spam folder or <a href="%href%">try again</a>.{% endtrans %}</p>
+</div>
+{% endblock %}

@@ -51,7 +51,7 @@
                             <button class="btn btn-primary px-4" type="submit">{% trans %}Sign in{% endtrans %}</button>
                         </div>
                         <div class="col-6 text-right">
-                            <a class="btn btn-link px-0" type="button">{% trans %}Forgot password{% endtrans %}?</a>
+                            <a class="btn btn-link px-0" href="{{ path('app_forgot_password_request') }}" type="button">{% trans %}Forgot password{% endtrans %}?</a>
                         </div>
                     </div>
                     </form>
